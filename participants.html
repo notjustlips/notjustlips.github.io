@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Participants · notJUSTLIPS New York</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Didact+Gothic&display=swap" rel="stylesheet">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '382002759543740');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=382002759543740&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel -->
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #FAF6F1; --blush: #EDD5C5; --rose: #C07A5C;
+  --deep: #221310; --gold: #C5A46A; --muted: #7B5548; --light: #F3ECE5;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--deep);
+  font-family: 'Didact Gothic', sans-serif;
+  font-weight: 300;
+}
+
+/* NAV */
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 56px;
+  background: rgba(250,246,241,0.95);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(197,164,106,0.2);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-logo { text-decoration: none; display: flex; align-items: baseline; }
+.logo-not { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; color: var(--gold); font-size: 1.25rem; }
+.logo-just, .logo-lips { font-family: 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: 0.18em; color: var(--deep); font-size: 1.1rem; text-transform: uppercase; }
+.nav-back {
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; transition: color 0.25s;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-back::before { content: '←'; font-size: 0.9rem; }
+.nav-back:hover { color: var(--rose); }
+
+/* HERO */
+.hero {
+  padding: 100px 56px 80px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: 1px solid rgba(197,164,106,0.2);
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(197,164,106,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: 'notJUSTLIPS';
+  position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9rem; font-weight: 300; font-style: italic;
+  color: rgba(34,19,16,0.04); white-space: nowrap; pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.58rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--rose);
+  border: 1px solid rgba(192,122,92,0.25);
+  padding: 10px 22px; margin-bottom: 36px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-badge::before, .hero-badge::after {
+  content: '✦'; font-size: 0.5rem;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 300; line-height: 1.05;
+  color: var(--deep); margin-bottom: 28px;
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+.hero-title em { font-style: italic; color: var(--blush); }
+
+.hero-sub {
+  font-size: 0.82rem; line-height: 2; color: var(--muted);
+  max-width: 580px; margin: 0 auto 48px;
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-cta {
+  animation: fadeUp 1.1s 0.3s ease both;
+}
+
+.btn-gold {
+  display: inline-block; padding: 17px 48px;
+  background: var(--gold); color: var(--deep);
+  text-decoration: none; font-size: 0.65rem;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  font-weight: 500; transition: all 0.3s ease;
+}
+.btn-gold:hover { background: var(--cream); color: var(--deep); }
+
+/* PULSE DOT */
+.pulse-wrap {
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px; margin-bottom: 28px;
+  animation: fadeUp 0.7s ease both;
+}
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rose);
+  animation: pulse 2s infinite;
+}
+.pulse-label {
+  font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--rose);
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(192,122,92,0.4); }
+  50% { opacity: 0.8; transform: scale(1.1); box-shadow: 0 0 0 8px rgba(192,122,92,0); }
+}
+
+/* MAIN CONTENT */
+.content-wrap {
+  max-width: 860px; margin: 0 auto;
+  padding: 90px 56px;
+}
+
+/* DISCOUNT HIGHLIGHT */
+.discount-strip {
+  background: linear-gradient(135deg, var(--rose) 0%, #8B4E34 100%);
+  padding: 48px 56px;
+  text-align: center;
+  margin-bottom: 72px;
+  position: relative;
+  overflow: hidden;
+}
+.discount-strip::before {
+  content: '60%';
+  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10rem; font-weight: 300;
+  color: rgba(255,255,255,0.05); line-height: 1;
+  pointer-events: none;
+}
+.discount-eyebrow {
+  font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); margin-bottom: 14px;
+}
+.discount-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 300;
+  color: #fff; line-height: 1.1; margin-bottom: 12px;
+}
+.discount-title em { font-style: italic; color: var(--blush); }
+.discount-sub {
+  font-size: 0.76rem; color: rgba(255,255,255,0.65); line-height: 1.8;
+}
+
+/* SECTIONS */
+.section-block { margin-bottom: 64px; }
+
+.section-label {
+  font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--rose); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::after {
+  content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--rose);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300;
+  color: var(--deep); line-height: 1.1; margin-bottom: 24px;
+}
+.section-title em { font-style: italic; color: var(--rose); }
+
+.section-text {
+  font-size: 0.82rem; line-height: 2.1; color: var(--muted); margin-bottom: 16px;
+}
+
+/* TREATMENT LIST */
+.treatment-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 8px;
+}
+.treatment-item {
+  background: #fff; padding: 20px 24px;
+  font-size: 0.78rem; color: var(--deep);
+  display: flex; align-items: center; gap: 12px;
+  transition: background 0.25s;
+}
+.treatment-item:hover { background: var(--light); }
+.treatment-item::before {
+  content: '—'; color: var(--gold); font-size: 0.7rem; flex-shrink: 0;
+}
+
+/* APPOINTMENT TYPES */
+.appt-list { margin-top: 8px; }
+.appt-item {
+  padding: 18px 0; border-bottom: 1px solid rgba(197,164,106,0.15);
+  display: flex; gap: 20px; align-items: flex-start;
+}
+.appt-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 300; color: rgba(192,122,92,0.2);
+  line-height: 1; flex-shrink: 0; width: 32px;
+}
+.appt-text { font-size: 0.8rem; line-height: 1.9; color: var(--muted); padding-top: 4px; }
+
+/* NOTES */
+.notes-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 8px;
+}
+.note-item {
+  background: var(--light); padding: 22px 24px;
+  font-size: 0.76rem; line-height: 1.8; color: var(--muted);
+  position: relative; padding-left: 40px;
+}
+.note-item::before {
+  content: ''; position: absolute;
+  left: 20px; top: 28px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--rose);
+}
+
+/* ROLLING BASIS STRIP */
+.rolling-strip {
+  background: var(--deep); padding: 48px 56px;
+  text-align: center; margin: 72px 0;
+}
+.rolling-strip p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 300; font-style: italic;
+  color: var(--blush); line-height: 1.5;
+}
+.rolling-strip span {
+  display: block; font-size: 0.62rem;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(250,246,241,0.35); margin-top: 12px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-style: normal;
+}
+
+/* BOOKING SECTION */
+.booking-section { padding: 0 0 100px; }
+
+.booking-header {
+  text-align: center; padding: 0 56px 48px;
+}
+.booking-header .section-label { justify-content: center; }
+.booking-header .section-label::after { display: none; }
+
+.booking-frame-wrap {
+  max-width: 900px; margin: 0 auto; padding: 0 56px;
+}
+.booking-frame-inner {
+  background: #fff;
+  border: 1px solid rgba(197,164,106,0.2);
+  overflow: hidden;
+}
+.booking-frame-inner iframe {
+  display: block; width: 100%; border: none;
+}
+
+/* FOOTER */
+footer {
+  background: var(--deep); padding: 40px 56px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 16px;
+}
+footer span { font-size: 0.65rem; color: rgba(250,246,241,0.3); letter-spacing: 0.08em; }
+footer a {
+  color: rgba(250,246,241,0.3); text-decoration: none;
+  font-size: 0.65rem; letter-spacing: 0.08em; transition: color 0.25s;
+}
+footer a:hover { color: var(--blush); }
+
+
+
+/* ─── CAROUSEL ─── */
+.carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  touch-action: pan-y;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+.carousel-slide {
+  min-width: 80vw;
+  max-width: 720px;
+  flex-shrink: 0;
+  margin-right: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-slide img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85);
+  transition: filter 0.4s ease;
+}
+.carousel-slide:hover img { filter: saturate(1); }
+.carousel-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(34,19,16,0.6), transparent);
+  padding: 20px 20px 16px;
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #fff;
+}
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(250,246,241,0.92);
+  border: 1px solid rgba(197,164,106,0.3);
+  color: var(--rose); font-size: 1rem;
+  width: 44px; height: 44px;
+  cursor: pointer; z-index: 10;
+  transition: all 0.25s ease;
+  display: flex; align-items: center; justify-content: center;
+}
+.carousel-btn:hover { background: var(--rose); color: #fff; border-color: var(--rose); }
+.carousel-prev { left: 16px; }
+.carousel-next { right: 16px; }
+.carousel-dots {
+  display: flex; justify-content: center; gap: 8px;
+  padding: 20px 0 4px;
+}
+.carousel-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(192,122,92,0.25);
+  cursor: pointer; transition: all 0.3s ease;
+  border: none; padding: 0;
+}
+.carousel-dot.active { background: var(--rose); transform: scale(1.3); }
+
+@media (max-width: 768px) {
+  .carousel-slide { min-width: 88vw; }
+  .carousel-btn { width: 36px; height: 36px; font-size: 0.85rem; }
+}
+
+
+/* ─── CURSOR ─── */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease;
+  mix-blend-mode: multiply;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.25s ease;
+  mix-blend-mode: multiply;
+}
+
+/* ─── MARQUEE ─── */
+.marquee-wrap {
+  background: var(--deep); padding: 14px 0;
+  overflow: hidden; white-space: nowrap;
+  border-top: 1px solid rgba(197,164,106,0.15);
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track span {
+  font-size: 0.6rem; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--gold); margin: 0 36px;
+}
+.marquee-track .sep { color: var(--rose); font-size: 0.5rem; margin: 0 8px; }
+
+/* ─── SCROLL REVEAL ─── */
+.reveal { transition: opacity 0.85s ease, transform 0.85s ease; }
+.js-loaded .reveal { opacity: 0; transform: translateY(36px); }
+.js-loaded .reveal.visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.22s; }
+.delay-3 { transition-delay: 0.34s; }
+.delay-4 { transition-delay: 0.46s; }
+
+/* ─── TREATMENT ITEM HOVER ─── */
+.treatment-item {
+  transition: background 0.3s ease, transform 0.3s ease, padding-left 0.3s ease;
+}
+.treatment-item:hover {
+  background: var(--light);
+  padding-left: 32px;
+}
+
+/* ─── NOTE ITEM ─── */
+.note-item {
+  transition: background 0.3s ease;
+}
+.note-item:hover { background: var(--blush); }
+
+/* ─── APPT ITEM ─── */
+.appt-item {
+  transition: background 0.3s ease, padding-left 0.3s ease;
+  padding-left: 0; border-radius: 0;
+}
+.appt-item:hover { background: var(--light); padding-left: 12px; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .hero { padding: 80px 24px 64px; }
+  .hero::after { font-size: 5rem; }
+  .content-wrap { padding: 60px 24px; }
+  .discount-strip { padding: 40px 24px; }
+  .treatment-grid { grid-template-columns: 1fr; }
+  .notes-grid { grid-template-columns: 1fr; }
+  .rolling-strip { padding: 40px 24px; }
+  .booking-header { padding: 0 24px 40px; }
+  .booking-frame-wrap { padding: 0 16px; }
+  footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Participants Being Selected</span><span class="sep">✦</span>
+    <span>Up to 60% Off</span><span class="sep">✦</span>
+    <span>Lip Enhancement</span><span class="sep">✦</span>
+    <span>Botox / Daxxify</span><span class="sep">✦</span>
+    <span>Facial Balancing</span><span class="sep">✦</span>
+    <span>Jawline Enhancement</span><span class="sep">✦</span>
+    <span>Educational Sessions</span><span class="sep">✦</span>
+    <span>Social Media Content</span><span class="sep">✦</span>
+    <span>NYC · Upper East Side</span><span class="sep">✦</span>
+    <span>Participants Being Selected</span><span class="sep">✦</span>
+    <span>Up to 60% Off</span><span class="sep">✦</span>
+    <span>Lip Enhancement</span><span class="sep">✦</span>
+    <span>Botox / Daxxify</span><span class="sep">✦</span>
+    <span>Facial Balancing</span><span class="sep">✦</span>
+    <span>Jawline Enhancement</span><span class="sep">✦</span>
+    <span>Educational Sessions</span><span class="sep">✦</span>
+    <span>Social Media Content</span><span class="sep">✦</span>
+    <span>NYC · Upper East Side</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="logo-not">not</span><span class="logo-just">JUST</span><span class="logo-lips">LIPS</span>
+  </a>
+  <a href="index.html" class="nav-back">Back to site</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="pulse-wrap">
+    <div class="pulse-dot"></div>
+    <span class="pulse-label">Now accepting participants</span>
+  </div>
+  <div class="hero-badge">notJUSTLIPS New York · Educational Program</div>
+  <h1 class="hero-title">
+    Participants currently<br>
+    <em>being selected</em>
+  </h1>
+  <p class="hero-sub">
+    We are currently accepting participants for filmed aesthetic content, educational injectable demonstrations, and advanced clinical education sessions in New York City.
+  </p>
+  <div class="hero-cta">
+    <a href="#booking" class="btn-gold">Apply for a spot →</a>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrap">
+
+  <!-- DISCOUNT STRIP -->
+  <div class="discount-strip reveal">
+    <p class="discount-eyebrow">Qualifying participants may receive</p>
+    <h2 class="discount-title">Up to <em>60% off</em> standard pricing</h2>
+    <p class="discount-sub">As part of ongoing educational programs, social media production, and aesthetic content campaigns.</p>
+  </div>
+
+  <!-- TREATMENTS -->
+  <div class="section-block reveal">
+    <p class="section-label">Treatment opportunities</p>
+    <h2 class="section-title">What may be <em>available</em></h2>
+    <div class="treatment-grid">
+      <div class="treatment-item">Lip enhancement</div>
+      <div class="treatment-item">Botox / Daxxify</div>
+      <div class="treatment-item">Facial balancing</div>
+      <div class="treatment-item">Chin &amp; jawline enhancement</div>
+      <div class="treatment-item">Cheek enhancement</div>
+      <div class="treatment-item">Preventative aesthetic treatments</div>
+      <div class="treatment-item">Skin rejuvenation procedures</div>
+    </div>
+  </div>
+
+  <!-- APPOINTMENT TYPES -->
+  <div class="section-block reveal delay-1">
+    <p class="section-label">Appointment types</p>
+    <h2 class="section-title">Depending on the session, treatments<br>may take place <em>as part of</em></h2>
+    <div class="appt-list">
+      <div class="appt-item">
+        <div class="appt-num">01</div>
+        <div class="appt-text">Educational demonstrations — advanced injector training sessions supervised by our clinical team</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-num">02</div>
+        <div class="appt-text">Social media and before &amp; after content — filmed in our clinic for educational and promotional purposes</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-num">03</div>
+        <div class="appt-text">Advanced clinical education sessions — part of ongoing injector development programs</div>
+      </div>
+    </div>
+    <p class="section-text" style="margin-top: 24px;">
+      All treatments are performed in a professional clinical environment and supervised when applicable.
+    </p>
+  </div>
+
+  <!-- NOTES -->
+  <div class="section-block reveal delay-2">
+    <p class="section-label">Please note</p>
+    <h2 class="section-title">Before you <em>apply</em></h2>
+    <div class="notes-grid">
+      <div class="note-item">Participants must be comfortable being photographed and filmed</div>
+      <div class="note-item">Availability is limited and varies weekly</div>
+      <div class="note-item">Not all applicants may qualify</div>
+      <div class="note-item">Pricing varies depending on treatment type, anatomy, and participation category</div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- BEFORE/AFTER GALLERY -->
+<div style="padding: 72px 0; background: var(--cream);">
+  <div style="max-width: 860px; margin: 0 auto; padding: 0 56px;">
+    <p class="section-label reveal">Real results</p>
+    <h2 class="section-title reveal delay-1">No filters. <em>No photoshop.</em></h2>
+    <p style="font-size:0.76rem; color:var(--muted); margin-bottom:40px; line-height:1.8;" class="reveal delay-2">
+      Every outcome reflects the same clinical standard — consistent, natural, structured.
+    </p>
+  </div>
+
+  <!-- CAROUSEL -->
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="IMG_5532.JPG" alt="Jawline Correction · Before &amp; After">
+        <div class="carousel-caption">Jawline Correction · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_5533.JPG" alt="Jawline · Before &amp; After">
+        <div class="carousel-caption">Jawline · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_4617.JPG" alt="Lip Augmentation · Before &amp; After">
+        <div class="carousel-caption">Lip Augmentation · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_4924.JPG" alt="Lip Filler · Before &amp; After">
+        <div class="carousel-caption">Lip Filler · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_9507.jpg" alt="Russian Lips · Before &amp; After">
+        <div class="carousel-caption">Russian Lips · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_4639.JPG" alt="Lip Filler · Before &amp; After">
+        <div class="carousel-caption">Lip Filler · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_4648.JPG" alt="Classic Augmentation · Before &amp; After">
+        <div class="carousel-caption">Classic Augmentation · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_5538.JPG" alt="Before &amp; After">
+        <div class="carousel-caption">Lip Enhancement · Before &amp; After</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="IMG_5537.JPG" alt="Full Face · Before &amp; After">
+        <div class="carousel-caption">Full Face Balancing · Before &amp; After</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">&#8592;</button>
+    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">&#8594;</button>
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</div>
+
+<!-- ROLLING BASIS STRIP -->
+<div class="rolling-strip reveal">
+  <p>"Appointments are offered on a rolling basis."</p>
+  <span>Spots are limited — apply early</span>
+</div>
+
+<!-- BOOKING -->
+<div class="booking-section" id="booking">
+  <div class="booking-header reveal">
+    <p class="section-label" style="justify-content:center;">Book your spot</p>
+    <h2 class="section-title" style="text-align:center;">Ready to <em>apply?</em></h2>
+    <p class="section-text" style="text-align:center; max-width:480px; margin: 0 auto;">
+      Select your preferred treatment and time below. Our team will review your application and confirm eligibility.
+    </p>
+  </div>
+  <div class="booking-frame-wrap reveal delay-1">
+    <div class="booking-frame-inner">
+      <iframe
+        src="https://Aestheticsbookingpage.as.me"
+        title="Book a Participant Appointment"
+        width="100%"
+        height="800"
+        frameBorder="0">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 notJUSTLIPS New York · Modlinska Lips Inc.</span>
+  <div style="display:flex; gap:24px;">
+    <a href="index.html">Home</a>
+    <a href="booking.html">Book Appointment</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="https://www.instagram.com/notjustlipsnewyork/" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+
+<script>
+
+/* ─── CAROUSEL ─── */
+.carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  touch-action: pan-y;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+.carousel-slide {
+  min-width: 80vw;
+  max-width: 720px;
+  flex-shrink: 0;
+  margin-right: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-slide img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85);
+  transition: filter 0.4s ease;
+}
+.carousel-slide:hover img { filter: saturate(1); }
+.carousel-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(34,19,16,0.6), transparent);
+  padding: 20px 20px 16px;
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #fff;
+}
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(250,246,241,0.92);
+  border: 1px solid rgba(197,164,106,0.3);
+  color: var(--rose); font-size: 1rem;
+  width: 44px; height: 44px;
+  cursor: pointer; z-index: 10;
+  transition: all 0.25s ease;
+  display: flex; align-items: center; justify-content: center;
+}
+.carousel-btn:hover { background: var(--rose); color: #fff; border-color: var(--rose); }
+.carousel-prev { left: 16px; }
+.carousel-next { right: 16px; }
+.carousel-dots {
+  display: flex; justify-content: center; gap: 8px;
+  padding: 20px 0 4px;
+}
+.carousel-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(192,122,92,0.25);
+  cursor: pointer; transition: all 0.3s ease;
+  border: none; padding: 0;
+}
+.carousel-dot.active { background: var(--rose); transform: scale(1.3); }
+
+@media (max-width: 768px) {
+  .carousel-slide { min-width: 88vw; }
+  .carousel-btn { width: 36px; height: 36px; font-size: 0.85rem; }
+}
+
+
+/* ─── CURSOR ─── */
+var cursor = document.getElementById('cursor');
+var ring = document.getElementById('cursorRing');
+var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+document.addEventListener('mousemove', function(e) {
+  mouseX = e.clientX; mouseY = e.clientY;
+  cursor.style.left = (mouseX - 5) + 'px';
+  cursor.style.top  = (mouseY - 5) + 'px';
+});
+
+function animateRing() {
+  ringX += (mouseX - ringX - 18) * 0.12;
+  ringY += (mouseY - ringY - 18) * 0.12;
+  ring.style.left = ringX + 'px';
+  ring.style.top  = ringY + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+document.querySelectorAll('a, button').forEach(function(el) {
+  el.addEventListener('mouseenter', function() {
+    cursor.style.transform = 'scale(2.5)';
+    ring.style.transform = 'scale(1.6)';
+    ring.style.borderColor = 'var(--rose)';
+  });
+  el.addEventListener('mouseleave', function() {
+    cursor.style.transform = 'scale(1)';
+    ring.style.transform = 'scale(1)';
+    ring.style.borderColor = 'var(--gold)';
+  });
+});
+
+/* ─── SCROLL REVEAL ─── */
+document.body.classList.add('js-loaded');
+var revealEls = document.querySelectorAll('.reveal');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(function(el) { observer.observe(el); });
+</script>
+
+
+<script>
+/* ─── CAROUSEL ─── */
+(function() {
+  var track = document.getElementById('carouselTrack');
+  var slides = track ? track.querySelectorAll('.carousel-slide') : [];
+  var dotsWrap = document.getElementById('carouselDots');
+  var prev = document.getElementById('carouselPrev');
+  var next = document.getElementById('carouselNext');
+  var current = 0;
+  var total = slides.length;
+  var autoTimer;
+
+  if (!track || !total) return;
+
+  // Create dots
+  for (var i = 0; i < total; i++) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Slide ' + (i+1));
+    (function(idx) { dot.addEventListener('click', function() { goTo(idx); }); })(i);
+    dotsWrap.appendChild(dot);
+  }
+
+  function getSlideWidth() {
+    return slides[0].offsetWidth + 16;
+  }
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(-' + (current * getSlideWidth()) + 'px)';
+    dotsWrap.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+    resetAuto();
+  }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { goTo(current + 1); }, 4000);
+  }
+
+  prev.addEventListener('click', function() { goTo(current - 1); });
+  next.addEventListener('click', function() { goTo(current + 1); });
+
+  // Touch swipe
+  var startX = 0;
+  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  }, {passive:true});
+
+  resetAuto();
+})();
+</script>
+
+</body>
+</html>
