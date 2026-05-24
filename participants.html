@@ -541,7 +541,7 @@ fbq('track', 'PageView');
 
 <!-- PHOTO GRID -->
 <div style="padding: 0 0 72px; background: var(--cream);">
-  <div style="max-width: 860px; margin: 0 auto; padding: 0 56px;" class="reveal">
+  <div style="max-width: 860px; margin: 0 auto; padding: 0 56px;">
     <p class="section-label">Real results</p>
     <h2 class="section-title">No filters. <em>No photoshop.</em></h2>
     <p style="font-size:0.76rem; color:var(--muted); margin-top:12px; margin-bottom:32px; line-height:1.8;">
@@ -549,13 +549,13 @@ fbq('track', 'PageView');
     </p>
   </div>
   <div style="max-width: 860px; margin: 0 auto; padding: 0 56px;">
-    <div class="photo-grid">
-      <div class="photo-grid-item"><img src="IMG_4617.JPG" alt=""></div>
-      <div class="photo-grid-item"><img src="IMG_4639.JPG" alt=""></div>
-      <div class="photo-grid-item"><img src="IMG_4643.JPG" alt=""></div>
-      <div class="photo-grid-item"><img src="IMG_4648.JPG" alt=""></div>
-      <div class="photo-grid-item"><img src="IMG_4924.JPG" alt=""></div>
-      <div class="photo-grid-item"><img src="IMG_9507.jpg" alt=""></div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:4px;">
+      <div style="aspect-ratio:1/1; overflow:hidden;"><img src="IMG_4617.JPG" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(0.85);"></div>
+      <div style="aspect-ratio:1/1; overflow:hidden;"><img src="IMG_4639.JPG" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(0.85);"></div>
+      <div style="aspect-ratio:1/1; overflow:hidden;"><img src="IMG_4643.JPG" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(0.85);"></div>
+      <div style="aspect-ratio:1/1; overflow:hidden;"><img src="IMG_4648.JPG" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(0.85);"></div>
+      <div style="aspect-ratio:1/1; overflow:hidden;"><img src="IMG_4924.JPG" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(0.85);"></div>
+      <div style="aspect-ratio:1/1; overflow:hidden;"><img src="IMG_9507.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(0.85);"></div>
     </div>
   </div>
 </div>
