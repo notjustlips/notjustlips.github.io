@@ -549,7 +549,6 @@ footer .logo-lips { color: var(--cream); }
    INSTAGRAM STRIP
 ───────────────────────────────────────────── */
 .insta-section { padding: 100px 80px; background: var(--light); }
-.elfsight-wrap { width: 100%; }
 .insta-placeholder {
   border: 1px solid rgba(192,122,92,0.2);
   padding: 64px 40px;
@@ -724,6 +723,24 @@ footer { background: var(--deep); padding: 72px 80px 40px; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 }
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '382002759543740');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=382002759543740&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -793,7 +810,7 @@ footer { background: var(--deep); padding: 72px 80px 40px; }
       alt="Olga Modlinska · notJUSTLIPS New York" style="object-position: right center;">
     <div class="hero-overlay"></div>
     <div class="hero-float-card reveal delay-4">
-      <p>"My work is my soul. I pursue it for love of what I do."</p>
+      <p>"Beautiful results begin with thoughtful technique."</p>
       <span>Olga Modlinska · Founder</span>
     </div>
   </div>
@@ -916,11 +933,11 @@ footer { background: var(--deep); padding: 72px 80px 40px; }
     ════════════════════════════════════════════
     -->
     <img src="olga_treatment.png" alt="Olga Modlinska · notJUSTLIPS New York" style="object-position: center 20%;">
-    <div class="about-img-label">Olga Modlinska, RN · at work</div>
+    <div class="about-img-label">Beautiful results begin with thoughtful technique.</div>
   </div>
 
   <div class="about-text">
-    <p class="section-label reveal">Our Founder</p>
+    <p class="section-label reveal">Our Approach</p>
     <h2 class="section-title reveal delay-1">
       Precision, experience,<br><em>and a standard of care.</em>
     </h2>
@@ -1063,8 +1080,9 @@ footer { background: var(--deep); padding: 72px 80px 40px; }
     <div class="filler-tags reveal delay-3">
       <span class="filler-tag">RHA Collection</span>
       <span class="filler-tag">Revanesse Versa</span>
-      <span class="filler-tag">Juvederm XC</span>
-      <span class="filler-tag">Restylane Lyft</span>
+      <span class="filler-tag">Radiesse</span>
+      <span class="filler-tag">Sculptra</span>
+      <span class="filler-tag">Botox</span>
       <span class="filler-tag">Jeaveau</span>
       <span class="filler-tag">Daxxify</span>
     </div>
@@ -1137,9 +1155,11 @@ footer { background: var(--deep); padding: 72px 80px 40px; }
     <a href="https://www.instagram.com/notjustlipsnewyork/" target="_blank" class="insta-link reveal">Open Instagram →</a>
   </div>
 
-  <div class="elfsight-wrap reveal">
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-63e9c21c-53d5-40b2-8454-db7751bb4334" data-elfsight-app-lazy></div>
+  <div class="reveal" style="text-align:center; padding: 40px 0;">
+    <a href="https://www.instagram.com/notjustlipsnewyork/" target="_blank" class="btn btn-outline">
+      View our work on Instagram →
+    </a>
+  </div>
   </div>
 </section>
 
@@ -1320,17 +1340,17 @@ document.querySelectorAll('.stat, .trust-item').forEach(el => statObserver.obser
         font-family: 'Cormorant Garamond', serif;
         font-size: 2.2rem; font-weight: 300; line-height: 1.1;
         color: var(--deep); margin-bottom: 12px;
-      ">5% off your <em style="font-style:italic; color:var(--rose);">first treatment</em></h2>
+      ">10% off your <em style="font-style:italic; color:var(--rose);">first treatment</em></h2>
 
       <p style="
         font-size: 0.76rem; line-height: 1.9; color: var(--muted);
         margin-bottom: 32px;
-      ">Leave your details and we'll send your personal discount code straight to your inbox.</p>
+      ">Leave your details and we'll send your personal 10% off code straight to your inbox.</p>
 
       <!-- Form -->
       <div id="popupForm">
         <div style="margin-bottom: 14px;">
-          <input type="text" id="popupName" placeholder="Full name"
+          <input type="text" id="popupName" name="FNAME" placeholder="Full name"
             oninput="clearError('popupName')"
             style="
               width: 100%; padding: 13px 16px;
@@ -1344,7 +1364,7 @@ document.querySelectorAll('.stat, .trust-item').forEach(el => statObserver.obser
         </div>
 
         <div style="margin-bottom: 14px;">
-          <input type="tel" id="popupPhone" placeholder="Phone number (e.g. +1 212 555 0100)"
+          <input type="tel" id="popupPhone" name="PHONE" placeholder="Phone number (e.g. +1 212 555 0100)"
             oninput="clearError('popupPhone')"
             style="
               width: 100%; padding: 13px 16px;
@@ -1358,7 +1378,7 @@ document.querySelectorAll('.stat, .trust-item').forEach(el => statObserver.obser
         </div>
 
         <div style="margin-bottom: 20px;">
-          <input type="email" id="popupEmail" placeholder="Email address"
+          <input type="email" id="popupEmail" name="EMAIL" placeholder="Email address"
             oninput="clearError('popupEmail')"
             style="
               width: 100%; padding: 13px 16px;
@@ -1389,6 +1409,15 @@ document.querySelectorAll('.stat, .trust-item').forEach(el => statObserver.obser
           </label>
         </div>
 
+        <!-- Mailchimp hidden fields -->
+        <input type="hidden" name="u" value="c56fdb996cd28b105e16fc61f">
+        <input type="hidden" name="id" value="c49bd62fae">
+        <input type="hidden" name="f_id" value="0014dbe1f0">
+        <!-- honeypot anti-spam -->
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_c56fdb996cd28b105e16fc61f_c49bd62fae" tabindex="-1" value="">
+        </div>
+
         <!-- Submit -->
         <button onclick="submitPopup()" style="
           width: 100%; padding: 16px;
@@ -1397,11 +1426,11 @@ document.querySelectorAll('.stat, .trust-item').forEach(el => statObserver.obser
           letter-spacing: 0.25em; text-transform: uppercase;
           transition: background 0.3s ease;
         " onmouseover="this.style.background='var(--deep)'" onmouseout="this.style.background='var(--rose)'">
-          Get my 5% off
+          Get my 10% off
         </button>
 
         <p style="font-size:0.6rem; color:rgba(123,85,72,0.5); text-align:center; margin-top:14px; line-height:1.6;">
-          Valid for first-time clients only. One use per person. Cannot be combined with other offers.
+          Valid for first-time clients only · One use per person · Cannot be combined with other offers
         </p>
       </div>
 
@@ -1418,7 +1447,7 @@ document.querySelectorAll('.stat, .trust-item').forEach(el => statObserver.obser
           margin-bottom: 12px;
         ">Your discount is on its way.</h3>
         <p style="font-size:0.76rem; line-height:1.9; color:var(--muted);">
-          Check your inbox — your personal 5% off code is waiting for you.<br>
+          Check your inbox — your personal 10% off code is waiting for you.<br>
           We look forward to welcoming you to notJUSTLIPS.
         </p>
       </div>
@@ -1470,40 +1499,52 @@ function submitPopup() {
   var consent = document.getElementById('checkConsent').checked;
   var valid = true;
 
-  // Name
   if (!name) {
     document.getElementById('errName').style.display = 'block';
     document.getElementById('popupName').style.borderColor = 'var(--rose)';
     valid = false;
   }
-  // Phone — must have at least 7 digits
-  if (!phone || phone.replace(/\D/g,'').length < 7) {
+  if (!phone || phone.replace(/[^\d]/g,'').length < 7) {
     document.getElementById('errPhone').style.display = 'block';
     document.getElementById('popupPhone').style.borderColor = 'var(--rose)';
     valid = false;
   }
-  // Email
-  var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var emailReg = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   if (!email || !emailReg.test(email)) {
     document.getElementById('errEmail').style.display = 'block';
     document.getElementById('popupEmail').style.borderColor = 'var(--rose)';
     valid = false;
   }
-  // Consent
   if (!consent) {
     document.getElementById('errConsent').style.display = 'block';
     valid = false;
   }
-
   if (!valid) return;
+
+  // Submit to Mailchimp via JSONP
+  var mcUrl = 'https://online.us22.list-manage.com/subscribe/post-json'
+    + '?u=c56fdb996cd28b105e16fc61f'
+    + '&id=c49bd62fae'
+    + '&f_id=0014dbe1f0'
+    + '&EMAIL=' + encodeURIComponent(email)
+    + '&FNAME=' + encodeURIComponent(name)
+    + '&PHONE=' + encodeURIComponent(phone)
+    + '&tags=popup10off'
+    + '&c=njlMCCallback';
+
+  var s = document.createElement('script');
+  s.src = mcUrl;
+  document.body.appendChild(s);
 
   // Show success
   document.getElementById('popupForm').style.display = 'none';
   document.getElementById('popupSuccess').style.display = 'block';
-  try { localStorage.setItem('njl_popup_submitted', '1'); } catch(e) {}
-
-  // Auto close after 4 seconds
+  try { localStorage.setItem('njl_popup_submitted','1'); } catch(e) {}
   setTimeout(closePopup, 4000);
+}
+
+window.njlMCCallback = function(data) {
+  console.log('Mailchimp:', data.result, data.msg);
 }
 
 // Trigger popup
