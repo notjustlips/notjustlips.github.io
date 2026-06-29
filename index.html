@@ -463,18 +463,123 @@ footer .logo-lips { color: var(--cream); }
 }
 
 .ageless-shell {
-  width: 100%;
-  min-height: 100vh;
-  background: #fff;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 0;
+  background: linear-gradient(135deg, #fff 0%, #f7efe8 100%);
   border: 1px solid rgba(197,164,106,0.18);
   box-shadow: 0 30px 80px rgba(34,19,16,0.08);
   overflow: hidden;
 }
 
-.ageless-shell ageless-embed-launcher {
+.ageless-panel {
+  padding: 56px 52px;
+}
+
+.ageless-panel--main {
+  background: rgba(255,255,255,0.88);
+}
+
+.ageless-panel--aside {
+  background: linear-gradient(160deg, #221310 0%, #6f4638 100%);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ageless-kicker {
+  font-size: 0.58rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 18px;
+}
+
+.ageless-panel--main h3,
+.ageless-panel--aside h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.3rem;
+  font-weight: 300;
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+
+.ageless-panel--main p,
+.ageless-panel--aside p {
+  font-size: 0.76rem;
+  line-height: 1.95;
+}
+
+.ageless-panel--main p {
+  color: var(--muted);
+  max-width: 440px;
+}
+
+.ageless-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.ageless-actions .btn {
+  min-width: 220px;
+  text-align: center;
+}
+
+.ageless-note {
+  margin-top: 18px;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: rgba(123,85,72,0.75);
+}
+
+.ageless-points {
+  display: grid;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.ageless-point {
+  padding-top: 14px;
+  border-top: 1px solid rgba(197,164,106,0.2);
+}
+
+.ageless-point strong {
   display: block;
-  width: 100%;
-  min-height: 100vh;
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.ageless-point span {
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.8;
+  color: rgba(250,246,241,0.74);
+}
+
+.ageless-mini-card {
+  margin-top: 40px;
+  padding: 22px 24px;
+  border: 1px solid rgba(250,246,241,0.16);
+  background: rgba(250,246,241,0.06);
+}
+
+.ageless-mini-card p {
+  color: rgba(250,246,241,0.82);
+}
+
+.ageless-mini-card strong {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
 }
 
 /* ─────────────────────────────────────────────
@@ -757,8 +862,11 @@ footer { background: var(--deep); padding: 72px 80px 40px; }
   .about-img-side img { object-position: center 25%; }
   .ageless-section { padding: 80px 28px; }
   .ageless-intro { margin-bottom: 28px; }
-  .ageless-shell,
-  .ageless-shell ageless-embed-launcher { min-height: 100dvh; }
+  .ageless-shell { grid-template-columns: 1fr; }
+  .ageless-panel { padding: 38px 28px; }
+  .ageless-panel--main h3,
+  .ageless-panel--aside h3 { font-size: 2rem; }
+  .ageless-actions .btn { width: 100%; min-width: 0; }
   .fillers-section { grid-template-columns: 1fr; padding: 80px 28px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .gallery-item--big { grid-row: auto; }
@@ -1123,20 +1231,55 @@ fbq('track', 'PageView');
       <p class="section-label reveal">See Your Results</p>
       <h2 class="section-title reveal delay-1">Try it on <em>yourself</em></h2>
       <p class="ageless-copy reveal delay-2">
-      See how your results could look — upload a photo and explore your transformation before booking.
+        See how your results could look — upload a photo and explore your transformation before booking.
       </p>
     </div>
     <div class="ageless-shell reveal delay-3">
-      <ageless-embed-launcher
-        data-ageless-url="https://ageless.ai/embed/platforms/0f9f372f-5334-49a0-9c20-0989769d619b/a/makeanappointment/transformation?utm_source=website_embed&amp;utm_medium=embed"
-        data-ageless-mode="dedicated"
-        data-ageless-fullpage="true"
-        style="display:block;width:100%;min-height:100vh;"
-      ></ageless-embed-launcher>
+      <div class="ageless-panel ageless-panel--main">
+        <p class="ageless-kicker">Private Preview</p>
+        <h3>See a realistic preview before you book</h3>
+        <p>
+          Open our private preview in a new tab, upload your photo, and explore how your results could look before your appointment.
+        </p>
+        <div class="ageless-actions">
+          <a
+            href="https://www.ageless.ai/en-US/a/makeanappointment/transformation/pre-scan?utm_source=website&utm_medium=website"
+            class="btn btn-fill"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Preview Your Results</a>
+          <a href="booking.html" class="btn btn-outline">Book Consultation</a>
+        </div>
+        <p class="ageless-note">Opens securely in a new tab for the smoothest experience on Safari and mobile.</p>
+      </div>
+      <div class="ageless-panel ageless-panel--aside">
+        <div>
+          <h3>Your preview, on your own time</h3>
+          <div class="ageless-points">
+            <div class="ageless-point">
+              <strong>Upload a photo</strong>
+              <span>Use a clear front-facing image to get the most accurate transformation preview.</span>
+            </div>
+            <div class="ageless-point">
+              <strong>Explore possibilities</strong>
+              <span>Review your simulation privately before deciding which treatment feels right for you.</span>
+            </div>
+            <div class="ageless-point">
+              <strong>Book when ready</strong>
+              <span>Come back to book once you have a better feel for your desired look.</span>
+            </div>
+          </div>
+        </div>
+        <div class="ageless-mini-card">
+          <strong>Why this format</strong>
+          <p>
+            Opening the preview separately avoids browser embed issues and gives clients a cleaner, more reliable experience.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<script async src="https://ageless.ai/embed/v1/loader.js"></script>
 
 <!-- ═══════════════════════════════════════════
      FILLERS INFO
