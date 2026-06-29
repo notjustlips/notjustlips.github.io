@@ -464,19 +464,17 @@ footer .logo-lips { color: var(--cream); }
 
 .ageless-shell {
   width: 100%;
-  min-height: 860px;
+  min-height: 100vh;
   background: #fff;
   border: 1px solid rgba(197,164,106,0.18);
   box-shadow: 0 30px 80px rgba(34,19,16,0.08);
   overflow: hidden;
 }
 
-.ageless-frame {
+.ageless-shell ageless-embed-launcher {
   display: block;
   width: 100%;
-  height: 860px;
-  border: 0;
-  background: #fff;
+  min-height: 100vh;
 }
 
 /* ─────────────────────────────────────────────
@@ -759,8 +757,8 @@ footer { background: var(--deep); padding: 72px 80px 40px; }
   .about-img-side img { object-position: center 25%; }
   .ageless-section { padding: 80px 28px; }
   .ageless-intro { margin-bottom: 28px; }
-  .ageless-shell { min-height: 720px; }
-  .ageless-frame { height: 720px; }
+  .ageless-shell,
+  .ageless-shell ageless-embed-launcher { min-height: 100dvh; }
   .fillers-section { grid-template-columns: 1fr; padding: 80px 28px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .gallery-item--big { grid-row: auto; }
@@ -1129,17 +1127,16 @@ fbq('track', 'PageView');
       </p>
     </div>
     <div class="ageless-shell reveal delay-3">
-      <iframe
-        class="ageless-frame"
-        src="https://ageless.ai/embed/platforms/0f9f372f-5334-49a0-9c20-0989769d619b/a/makeanappointment/transformation?utm_source=website_embed&amp;utm_medium=embed"
-        title="Ageless transformation preview"
-        loading="lazy"
-        allow="camera; microphone; fullscreen"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
+      <ageless-embed-launcher
+        data-ageless-url="https://ageless.ai/embed/platforms/0f9f372f-5334-49a0-9c20-0989769d619b/a/makeanappointment/transformation?utm_source=website_embed&amp;utm_medium=embed"
+        data-ageless-mode="dedicated"
+        data-ageless-fullpage="true"
+        style="display:block;width:100%;min-height:100vh;"
+      ></ageless-embed-launcher>
     </div>
   </div>
 </section>
+<script async src="https://ageless.ai/embed/v1/loader.js"></script>
 
 <!-- ═══════════════════════════════════════════
      FILLERS INFO
